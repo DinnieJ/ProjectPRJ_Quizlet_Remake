@@ -81,7 +81,7 @@ public class LoginServer extends HttpServlet {
         User u = udb.getUser(username, password);
 //        System.out.println(u.getUsername()+" "+u.getPassword());
         if(u==null){
-            session.setAttribute("message","Wrong username or password");
+            request.setAttribute("message","Wrong username or password");
             RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
             dis.forward(request, response);
         }else{
