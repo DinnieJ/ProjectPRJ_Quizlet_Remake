@@ -2,12 +2,20 @@
   margin-right: 0px;
   font-size: 13px;
 }
-
+/*html{
+  background-image: url(../backgrounds/login-background.jpg);
+  
+}*/
 body {
   color: white;
   background-image: url(../backgrounds/login-background.jpg);
   background-size: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 
 .login {
   background: rgba(82,82,82, 0.5);
