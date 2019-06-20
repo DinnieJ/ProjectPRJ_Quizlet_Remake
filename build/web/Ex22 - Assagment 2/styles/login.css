@@ -1,0 +1,83 @@
+.action-with-pass {
+  margin-right: 0px;
+  font-size: 13px;
+}
+
+body {
+  color: white;
+  background-image: url(../backgrounds/login-background.jpg);
+  background-size: auto;
+}
+
+.login {
+  background: rgba(82,82,82, 0.5);
+  padding: 40px;
+  width: 250px;
+  margin: auto;
+  margin-top: 80px;
+  height: 400px;
+  margin-left: 180px;
+}
+
+form {
+  width: 240px;
+  text-align: center;
+}
+
+input {
+  width: 240px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  font-family: 'Play', sans-serif;
+  font-weight: 200;
+  padding: 10px 0;
+  transition: border 0.5s;
+  outline: none;
+  color: white;
+}
+
+input[type=submit] {
+  width: 190px;
+  background: white;
+  color: #000;
+  line-height: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: 19px;
+}
+
+a {
+  color: yellow;
+  text-decoration: blink;
+  width: 50%;
+  cursor: pointer;
+}
+
+a:hover {
+  color: skyblue;
+}
+
+::placeholder {
+  color: aliceblue;
+  opacity: 0.8;
+}
+
+.title {
+  color: white;
+}
+
+.warning {
+  background-color: rgb(224, 75, 75);
+  color: white;
+  font-weight: 300;
+  line-height: 30px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
