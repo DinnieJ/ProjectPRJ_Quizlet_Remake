@@ -12,6 +12,10 @@
         <servlet-name>SignUpServer</servlet-name>
         <servlet-class>controller.SignUpServer</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddNewProjectServer</servlet-name>
+        <servlet-class>controller.AddNewProjectServer</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>SignUpServer</servlet-name>
         <url-pattern>/SignUpServer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddNewProjectServer</servlet-name>
+        <url-pattern>/AddNewProjectServer</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

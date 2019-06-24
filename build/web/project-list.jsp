@@ -4,6 +4,10 @@
     Author     : MemeLord
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="entity.ProjectSet"%>
+<%@page import="model.ProjectDatabase"%>
 <%@page import="entity.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,15 +17,17 @@
     <meta charset="utf-8">
     <title>Project List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/topnav.css">
-    <link rel="stylesheet" href="styles/project.css">
-    <link rel="stylesheet" href="styles/left-column.css">
+    <link rel="stylesheet" href="styles/common.css?v=1.1">
+    <link rel="stylesheet" href="styles/topnav.css?v=1.1">
+    <link rel="stylesheet" href="styles/project.css?v=1.1">
+    <link rel="stylesheet" href="styles/left-column.css?v=1.1">
     <link rel="icon" href="icons/favicon.ico" type="image/gif" sizes="16x16">
     </head>
     <body>
      <%
          User u = (User)session.getAttribute("user");
+         ProjectDatabase pdb = new ProjectDatabase();
+         List<ProjectSet> listProject = pdb.getAllProject(u.getUsername());
      %>
     <div class="main topnav">
       <section class="nav-section">
@@ -35,8 +41,8 @@
         </a>
       </section>
       <section class="nav-section account">
-        <a href="#" class="">
-          <%=u.getName()%>
+        <a href="login.jsp" class="">
+          <%=u.getName()%>(Sign Out)
         </a>
       </section>
     </div>
@@ -52,13 +58,13 @@
 
         <ul class="aside-menu">
           <li class="aside-menu__item border-btn">
-            <a href="">
+            <a href="addproject.jsp">
               Create Project
             </a>
           </li>
         </ul>
 
-        <h4 class="aside-menu__caption">Your Question Set</h4>
+        <h4 class="aside-menu__caption">Saved Project</h4>
 
         <ul class="aside-menu">
           <li class="aside-menu__item border-btn">
@@ -89,16 +95,23 @@
         </ul>
       </aside>
       <div class="list">
+        <%if(listProject.size()==0){%>
         <article class="post">
           <header class="post__header">
-            <a class="post__header-name" href="">Application Layer</a>
+            <a class="post__header-name" href="">You haven't create any project</a>
+          </header>
+        </article>
+        <%}%>
+        <%for(int i = 0;i<listProject.size();i++){%>
+        <article class="post">
+          <header class="post__header">
+            <a class="post__header-name" href=""><%=listProject.get(i).getSetName()%></a>
             <time class="post__header-time">
-              Đỗ Đức Duy
+              <%=listProject.get(i).getCreator()%>
             </time>
           </header>
           <div class="post__text">
-            <p>Practive chapter 2</p>
-            <p>Number of questions : 10</p>
+            <p><%=listProject.get(i).getDescription()%></p>
           </div>
           <footer class="post__footer">
             <span class="post__footer-button">
@@ -112,5 +125,6 @@
             </span>
           </footer>
         </article>
+          <%}%>
     </body>
 </html>

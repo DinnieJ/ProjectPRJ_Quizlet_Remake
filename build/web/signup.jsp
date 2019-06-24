@@ -15,8 +15,8 @@
 
         <title>Sign Up</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="styles/login.css">
-        <link rel="stylesheet" href="styles/common.css">
+        <link rel="stylesheet" href="styles/login.css?v=1.1">
+        <link rel="stylesheet" href="styles/common.css?v=1.1">
         <link rel="icon" href="icons/favicon.ico" type="image/gif" sizes="16x16">
     </head>
     <body>

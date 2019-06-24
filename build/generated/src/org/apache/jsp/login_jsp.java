@@ -49,8 +49,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Login</title>\n");
-      out.write("        <link rel=\"stylesheet\" href=\"styles/login.css\">\n");
-      out.write("        <link rel=\"stylesheet\" href=\"styles/common.css\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"styles/login.css?v=1.1\">\n");
+      out.write("        <link rel=\"stylesheet\" href=\"styles/common.css?v=1.1\">\n");
       out.write("        <link rel=\"icon\" href=\"icons/favicon.ico\" type=\"image/gif\" sizes=\"16x16\">\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
@@ -60,11 +60,11 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                ");
 
                     System.out.println("Return message: "+request.getParameter("message"));
-                    if(session.getAttribute("message")!=null){
+                    if(request.getAttribute("message")!=null){
                 
       out.write("\n");
       out.write("                <h4 class=\"warning shadow-box\">");
-      out.print(session.getAttribute("message"));
+      out.print(request.getAttribute("message"));
       out.write("</h4>\n");
       out.write("                ");
 }

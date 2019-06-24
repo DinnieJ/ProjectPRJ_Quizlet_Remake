@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import entity.User;
 
 public final class project_002dlist_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -44,6 +45,7 @@ public final class project_002dlist_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -58,7 +60,11 @@ public final class project_002dlist_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    <link rel=\"icon\" href=\"icons/favicon.ico\" type=\"image/gif\" sizes=\"16x16\">\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        \n");
+      out.write("     ");
+
+         User u = (User)session.getAttribute("user");
+     
+      out.write("\n");
       out.write("    <div class=\"main topnav\">\n");
       out.write("      <section class=\"nav-section\">\n");
       out.write("        <a href=\"#\" class=\"\">\n");
@@ -72,7 +78,9 @@ public final class project_002dlist_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("      </section>\n");
       out.write("      <section class=\"nav-section account\">\n");
       out.write("        <a href=\"#\" class=\"\">\n");
-      out.write("          duyddhe130239@fpt.edu.vn\n");
+      out.write("          ");
+      out.print(u.getName());
+      out.write("\n");
       out.write("        </a>\n");
       out.write("      </section>\n");
       out.write("    </div>\n");
@@ -80,7 +88,9 @@ public final class project_002dlist_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("      <aside class=\"left-col shadow-box\">\n");
       out.write("        <ul class=\"aside-menu\">\n");
       out.write("          <li class=\"aside-menu__item border-btn\">\n");
-      out.write("            <a href=\"\">Đỗ Đức Duy</a>\n");
+      out.write("            <a href=\"\">");
+      out.print(u.getName());
+      out.write("</a>\n");
       out.write("          </li>\n");
       out.write("        </ul>\n");
       out.write("\n");
@@ -94,7 +104,7 @@ public final class project_002dlist_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("          </li>\n");
       out.write("        </ul>\n");
       out.write("\n");
-      out.write("        <h4 class=\"aside-menu__caption\">subjects list</h4>\n");
+      out.write("        <h4 class=\"aside-menu__caption\">Your Question Set</h4>\n");
       out.write("\n");
       out.write("        <ul class=\"aside-menu\">\n");
       out.write("          <li class=\"aside-menu__item border-btn\">\n");

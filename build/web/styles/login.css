@@ -6,7 +6,7 @@
 body {
   color: white;
   background-image: url(../backgrounds/login-background.jpg);
-  background-size: auto;
+  background-size: cover;
 }
 
 .login {
@@ -35,7 +35,7 @@ input {
   padding: 10px 0;
   transition: border 0.5s;
   outline: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.918);
 }
 
 input[type=submit] {
@@ -68,16 +68,4 @@ a:hover {
 
 .title {
   color: white;
-}
-
-.warning {
-  background-color: rgb(224, 75, 75);
-  color: white;
-  font-weight: 300;
-  line-height: 30px;
-  width: 80%;
-  margin: 0 auto;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
 }

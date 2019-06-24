@@ -1,4 +1,4 @@
- body {
+body {
   background-image: url(../backgrounds/project-list-background2.jpg);
   background-size: cover;
 }
@@ -107,4 +107,72 @@
   background: #999;
 }
 
+.add-form {
+  margin: 0 auto;
+  background-color: white;
+  width: 300px;
+  height: 350px;
+  border-radius: 3px;
+  padding: 6px 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  position: relative;
+  transform: translate3d(0px, 0px, 0px);
+}
 
+.add-form input {
+  width: 250px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid blue;
+  font-family: 'Play', sans-serif;
+  font-weight: 200;
+  padding: 10px 0;
+  transition: border 0.5s;
+  outline: none;
+  color: blue;
+  margin: 2px 25px;
+}
+
+.add-form .title {
+  width: 200px;
+  margin: 10px auto;
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-align: center;
+}
+
+.add-form:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.add-form input[type=submit] {
+  width: 190px;
+  color: blue;
+  line-height: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 19px;
+  margin: 2px 55px;
+  border: 1px solid;
+  border-color: transparent;
+}
+
+.add-form input[type=submit]:hover {
+  border-color: blue;
+}
+
+.select-subject {
+  width: 250px;
+  margin: 10px 25px;
+}
+
+.decription-input {
+  margin: 10px 30px;
+  width: 250px;
+}
+
+.hidden {
+  visibility: hidden;
+}
