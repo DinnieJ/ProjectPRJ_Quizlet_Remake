@@ -1,0 +1,107 @@
+:root{
+  --grayColor: #73819e;
+}
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.main {
+  max-width: 700px;
+  min-width: 350px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img.icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  vertical-align: middle;
+  border: 0;
+  margin-top: -3px;
+  margin-right: 3px;
+  margin-left: -8px;
+  background-color: white;
+}
+
+.main > .list {
+  float: right;
+  width: 500px;
+}
+
+.border-btn {
+  transition: border 0.5s;
+  border: 2px solid;
+  border-color: transparent;
+}
+
+.border-btn:hover {
+  border-color: blue;
+}
+
+.shadow-box {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.warning, .success {
+
+  color: white;
+  font-weight: 300;
+  line-height: 30px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+.warning {
+  background-color: rgb(224, 75, 75);
+}
+.success {
+  background-color: #228c22;
+}
+
+textarea {
+  border-color: blue;
+  color: blue;
+  resize: none;
+  outline: none;
+  overflow: auto;
+  border-radius: 10px;
+  height: 100px;
+}
+
+.rainbow {
+  /* Standar Syntax */
+  animation: rainbow 5s infinite;
+}
+
+@keyframes rainbow{
+  0%{color: orange;}
+  10%{color: purple;}
+  20%{color: red;}
+  30%{color: CadetBlue;}
+  40%{color: yellow;}
+  50%{color: coral;}
+  60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+  100%{color: orange;}
+}
