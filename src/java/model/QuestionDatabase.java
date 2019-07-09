@@ -8,7 +8,10 @@ package model;
 import entity.Question;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,4 +49,31 @@ public class QuestionDatabase {
         }
     }
     
+    public List<Question> getAllQuestion(String setID){
+        String query = "Select * from Question where QuestionSetID = ?";
+        List<Question> questionList = new ArrayList<>();
+        try{
+            PreparedStatement st = this._dbConnection.prepareCall(query);
+            st.setString(1, setID);
+            ResultSet result = st.executeQuery();
+            while(result.next()){
+                String[] answer = {result.getString(3),result.getString(4),result.getString(5),result.getString(6)};
+                questionList.add(new Question(result.getString(1), result.getString(2), answer, result.getString(7), result.getString(8)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return questionList;
+    }
+    
+    public void deleteQuestion(String questionID){
+        String query ="delete from [Question] where QuestionID=?";
+        try{
+            PreparedStatement st = this._dbConnection.prepareCall(query);
+            st.setString(1, questionID);
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

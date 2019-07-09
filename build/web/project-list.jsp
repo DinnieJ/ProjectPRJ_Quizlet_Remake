@@ -105,7 +105,7 @@
                 <%for (int i = 0; i < listProject.size(); i++) {%>
                 <article class="post">
                     <header class="post__header">
-                        <a class="post__header-name" href=""><%=listProject.get(i).getSetName()%></a>
+                        <a class="post__header-name" href="questionlist.jsp?id=<%=listProject.get(i).getSetID()%>"><%=listProject.get(i).getSetName()%></a>
                         <time class="post__header-time">
                             <%=listProject.get(i).getCreator()%>
                         </time>

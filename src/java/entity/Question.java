@@ -19,6 +19,14 @@ public class Question {
     public Question() {
     }
 
+    public Question(String questionID, String content, String[] answer, String correctAns, String questionSet) {
+        this.questionID = questionID;
+        this.content = content;
+        this.answer = answer;
+        this.correctAns = correctAns;
+        this.questionSet = questionSet;
+    }
+
     public Question(String content, String[] answer, String correctAns, String questionSet) {
         this.content = content;
         this.answer = answer;

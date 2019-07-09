@@ -34,6 +34,8 @@
                 <input type="text" name="name" placeholder="Your name">
                 <input type="submit" value="Sign Up" class="border-btn">
             </form>
+                <br>
+                Back to the login page | <a href="login.jsp">&nbsp;Login</a>
         </div>
     </body>
 </html>

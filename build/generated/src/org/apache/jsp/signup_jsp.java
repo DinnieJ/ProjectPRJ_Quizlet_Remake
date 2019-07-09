@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class signup_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -41,6 +41,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write('\n');
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -48,18 +49,21 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Login</title>\n");
+      out.write("\n");
+      out.write("        <meta charset=\"utf-8\">\n");
+      out.write("\n");
+      out.write("        <title>Sign Up</title>\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles/login.css?v=1.1\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles/common.css?v=1.1\">\n");
       out.write("        <link rel=\"icon\" href=\"icons/favicon.ico\" type=\"image/gif\" sizes=\"16x16\">\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"login\">\n");
-      out.write("            <form action=\"LoginServer\" method=\"POST\">\n");
-      out.write("                <h1 class=\"title\">Log In</h1>\n");
+      out.write("            <form action=\"SignUpServer\" method=\"post\">\n");
+      out.write("                <h1 class=\"title\">Sign Up</h1>\n");
       out.write("                ");
 
-                    System.out.println("Return message: "+request.getParameter("message"));
                     if(request.getAttribute("message")!=null){
                 
       out.write("\n");
@@ -71,14 +75,15 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("                <input type=\"text\" name=\"username\" placeholder=\"User name\">\n");
       out.write("                <input type=\"password\" name=\"password\" placeholder=\"Password\">\n");
-      out.write("                <input type=\"submit\" value=\"Login\" class=\"border-btn\">\n");
-      out.write("\n");
-      out.write("                <br><br><br><br><br><br>\n");
-      out.write("                Don't have account ? <a href=\"signup.jsp\">&nbsp;Sign Up</a>\n");
+      out.write("                <input type=\"email\" name=\"email\" placeholder=\"Email\">\n");
+      out.write("                <input type=\"text\" name=\"name\" placeholder=\"Your name\">\n");
+      out.write("                <input type=\"submit\" value=\"Sign Up\" class=\"border-btn\">\n");
       out.write("            </form>\n");
+      out.write("                <br>\n");
+      out.write("                Back to the login page | <a href=\"login.jsp\">        &nbsp;Login</a>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

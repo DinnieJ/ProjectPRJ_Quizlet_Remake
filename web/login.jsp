@@ -28,12 +28,6 @@
                 <input type="password" name="password" placeholder="Password">
                 <input type="submit" value="Login" class="border-btn">
 
-                <br>
-                <br>
-                <div class="container">
-                    <a class="action-with-pass">Reset Password</a>
-                    <a class="action-with-pass">Forget Password</a>
-                </div>
                 <br><br><br><br><br><br>
                 Don't have account ? <a href="signup.jsp">&nbsp;Sign Up</a>
             </form>

@@ -81,10 +81,12 @@ public class ProjectDatabase {
         return id;
     }
     public void deleteProject(String id){
-        String query = "delete from [QuestionSet] where SetID = ?";
+        String query = "delete from [Question] where QuestionSetID=?\n"
+                +      "delete from [QuestionSet] where SetID = ?";
         try{
             PreparedStatement statement = this._dbConnection.prepareCall(query);
             statement.setString(1, id);
+            statement.setString(2, id);
             statement.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ProjectDatabase.class.getName()).log(Level.SEVERE, null, ex);
