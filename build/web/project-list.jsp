@@ -31,12 +31,12 @@
         %>
         <div class="main topnav">
             <section class="nav-section">
-                <a href="#" class="">
+                <a href="project-list.jsp" class="">
                     <img src="icons/favicon.ico" class="icon">Questions
                 </a>
             </section>
             <section class="nav-section">
-                <a href="#" class="">
+                <a href="search.jsp" class="">
                     <img src="icons/search-icon.png" class="icon">Search
                 </a>
             </section>
@@ -64,7 +64,7 @@
                     </li>
                 </ul>
 
-                <h4 class="aside-menu__caption">Saved Project</h4>
+                <h4 class="aside-menu__caption">Recent Project</h4>
 
                 <ul class="aside-menu">
                     <li class="aside-menu__item border-btn">

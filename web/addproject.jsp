@@ -26,12 +26,12 @@
         %>
             <div class="main topnav">
                 <section class="nav-section">
-                    <a href="#" class="">
+                    <a href="project-list.jsp" class="">
                         <img src="icons/favicon.ico" class="icon">Questions
                     </a>
                 </section>
                 <section class="nav-section">
-                    <a href="#" class="">
+                    <a href="search.jsp" class="">
                         <img src="icons/search-icon.png" class="icon">Search
                     </a>
                 </section>

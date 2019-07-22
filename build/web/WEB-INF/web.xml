@@ -28,6 +28,18 @@
         <servlet-name>DeleteQuestionServer</servlet-name>
         <servlet-class>controller.DeleteQuestionServer</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GoToTestServer</servlet-name>
+        <servlet-class>controller.GoToTestServer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SubmitTestServer</servlet-name>
+        <servlet-class>controller.SubmitTestServer</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchServer</servlet-name>
+        <servlet-class>controller.SearchServer</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -55,6 +67,18 @@
     <servlet-mapping>
         <servlet-name>DeleteQuestionServer</servlet-name>
         <url-pattern>/DeleteQuestionServer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GoToTestServer</servlet-name>
+        <url-pattern>/GoToTestServer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubmitTestServer</servlet-name>
+        <url-pattern>/SubmitTestServer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchServer</servlet-name>
+        <url-pattern>/SearchServer</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

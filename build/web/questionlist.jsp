@@ -33,7 +33,7 @@
                 </a>
             </section>
             <section class="nav-section">
-                <a href="#" class="">
+                <a href="search.jsp" class="">
                     <img src="icons/search-icon.png" class="icon">Search
                 </a>
             </section>
@@ -68,7 +68,7 @@
                         </a>
                     </li>
                     <li class="aside-menu__item border-btn">
-                        <a href="">
+                        <a href="GoToTestServer?setID=<%=setId%>&user=<%= u.getUsername() %>">
                             Test
                         </a>
                     </li>
@@ -77,7 +77,7 @@
                 <h4 class="aside-menu__caption">action</h4>
                 <ul class="aside-menu">
                     <li class="aside-menu__item border-btn">
-                        <a href="">
+                        <a href="addquestion.jsp?id=<%= setId %>">
                             Create Question
                         </a>
                     </li>

@@ -75,4 +75,16 @@ public class UserDatabase {
         return false;
     }
     
+    public void updateTestLog(String username,String setID,double mark){
+        String query="insert into [TestLog] values(?,?,?,GETDATE())";
+        try{
+            PreparedStatement st = this._dbConnection.prepareCall(query);
+            st.setString(1, setID);
+            st.setString(2, username);
+            st.setDouble(3, mark);
+            st.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

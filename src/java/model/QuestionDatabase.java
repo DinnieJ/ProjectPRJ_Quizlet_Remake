@@ -76,4 +76,24 @@ public class QuestionDatabase {
             Logger.getLogger(QuestionDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public List<Question> getRandomQuestion(int numOfQuestion,String setID){
+        String query = "Select top(?) * from [Question] where [QuestionSetID]= ? order by newid()";
+        List<Question> questionList = new ArrayList<>();
+        try{
+            PreparedStatement st = this._dbConnection.prepareCall(query);
+            st.setInt(1, numOfQuestion);
+            st.setString(2, setID);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                String[] answer = {rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)};
+                questionList.add(new Question(rs.getString(1), rs.getString(2),answer , rs.getString(7), rs.getString(8)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return questionList;
+    }
+    
+    
 }

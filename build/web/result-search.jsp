@@ -1,18 +1,18 @@
 <%-- 
-    Document   : project-list
-    Created on : Jun 20, 2019, 7:32:28 AM
+    Document   : result-search
+    Created on : Jul 19, 2019, 10:22:03 AM
     Author     : MemeLord
 --%>
 
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="entity.ProjectSet"%>
+<%@page import="java.util.List"%>
 <%@page import="model.ProjectDatabase"%>
 <%@page import="entity.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
         <title>Project List</title>
@@ -26,8 +26,7 @@
     <body>
         <%
             User u = (User) session.getAttribute("user");
-            ProjectDatabase pdb = new ProjectDatabase();
-            List<ProjectSet> listProject = pdb.getAllProject(u.getUsername());
+            List<ProjectSet> listProject = (List<ProjectSet>)request.getAttribute("searchList");
         %>
         <div class="main topnav">
             <section class="nav-section">
@@ -98,10 +97,16 @@
                 <%if (listProject.size() == 0) {%>
                 <article class="post">
                     <header class="post__header">
-                        <a class="post__header-name" href="">You haven't create any project</a>
+                        <a class="post__header-name" href="">No project found!</a>
                     </header>
                 </article>
-                <%}%>
+                <%}else{%>
+                <article class="post">
+                    <header class="post__header">
+                        <a class="post__header-name" href="#">Found <%= listProject.size() %> project(s)</a>
+                    </header>
+                </article>
+                <% } %>
                 <%for (int i = 0; i < listProject.size(); i++) {%>
                 <article class="post">
                     <header class="post__header">
@@ -114,11 +119,8 @@
                         <p><%=listProject.get(i).getDescription()%></p>
                     </div>
                     <footer class="post__footer">
-                        <span class="post__footer-button" onclick="redirectAdd('<%=listProject.get(i).getSetID()%>')">
-                            Add question
-                        </span>
-                        <span class="post__footer-button" onclick="doDelete('<%=listProject.get(i).getSetID()%>')">
-                            Delete
+                        <span class="post__footer-button" onclick="redirect('<%=listProject.get(i).getSetID()%>')">
+                            Test
                         </span>
                     </footer>
                 </article>
@@ -130,8 +132,9 @@
                             window.location = "DeleteProjectServer?id=" + id;
                         }
                     }
-                    function redirectAdd(id){
-                        window.location = "addquestion.jsp?id="+id;
+                    function redirect(id){
+                        window.location = "GoToTestServer?setID="+id+"&user=<%= u.getUsername() %>";
                     }
                 </script>
                 </html>
+</html>

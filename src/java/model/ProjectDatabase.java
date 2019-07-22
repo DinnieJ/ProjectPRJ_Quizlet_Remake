@@ -92,4 +92,19 @@ public class ProjectDatabase {
             Logger.getLogger(ProjectDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public List<ProjectSet> getSpectifyProject(String searchField){
+        List<ProjectSet> list = new ArrayList<>();
+        String query = "Select * from [QuestionSet] where SetName like '%"+searchField+"%'";
+        try{
+            PreparedStatement statement = this._dbConnection.prepareCall(query);
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                list.add(new ProjectSet(rs.getString(1),rs.getString(2), rs.getString(4), rs.getString(3)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProjectDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
 }
